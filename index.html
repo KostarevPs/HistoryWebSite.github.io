@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Языки программирования. Генеалогическое древо.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-icon">
+                <div class="binary-code">11010000 10101111 00100000 11010000 10011011 11010000 10101110 11010000 10010001 11010000 10011011 11010000 10101110 00100000 11010000 10100001 11010000 10011110 11010000 10010001 11010000 10010000 11010000 10011010</div>
+                <div class="chip-container">
+                    <div class="chip"></div>
+                    <div class="chip"></div>
+                    <div class="chip"></div>
+                </div>
+            </div>
+            <h1 class="loading-title">ИНИЦИАЛИЗАЦИЯ СИСТЕМЫ</h1>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="loading-text">Загрузка языков, бреда старого идиота и бесполезной информации...</p>
+        </div>
+    </div>
+    <div id="main-content" class="hidden">
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <h1>ХРОНОЛОГИЯ ПОЯВЛЕНИЯ ЯЗЫКОВ ПРОГРАММИРОВАНИЯ</h1>
+                    <p class="subtitle">Анализ эволюции вычислительных языков</p>
+                </div>
+                <nav class="navbar">
+                    <button class="nav-btn active" data-section="intro">Введение</button>
+                    <button class="nav-btn" data-section="tree">Генеалогическое древо</button>
+                    <button class="nav-btn" data-section="statistics">Статистика 2025</button>
+                    <button class="nav-btn" data-section="syntax">Сравнение синтаксиса</button>
+                    <button class="nav-btn" data-section="evolution">Эволюция</button>
+                    <button class="nav-btn" data-section="facts">Факты</button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <section id="intro" class="content-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-info-circle"></i> ВВЕДЕНИЕ В ЯЗЫКИ ПРОГРАММИРОВАНИЯ</h2>
+                    <button class="continue-btn" id="continue-btn">
+                        <i class="fas fa-arrow-right"></i> ПРОДОЛЖИТЬ, ПЕРЕЙТИ К ИССЛЕДОВАНИЮ
+                    </button>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fas fa-history"></i>
+                            <h3>Исторический контекст</h3>
+                        </div>
+                        <p>Первый язык программирования высокого уровня, Plankalkül, был разработан Конрадом Цузе в 1940-х годах. FORTRAN, созданный в 1957 году, стал первым широко используемым языком.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fas fa-sitemap"></i>
+                            <h3>Классификация</h3>
+                        </div>
+                        <p>Языки программирования классифицируются по парадигмам: императивные, функциональные, логические, объектно-ориентированные. Каждая парадигма предлагает уникальный подход к решению задач.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fas fa-brain"></i>
+                            <h3>Эволюция мышления</h3>
+                        </div>
+                        <p>От машинного кода до языков высокого уровня с абстракциями. Современные языки фокусируются на читаемости, безопасности и параллелизме.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Тенденции развития</h3>
+                        </div>
+                        <p>Современные тенденции включают рост популярности языков со статической типизацией, развитие domain-specific языков и увеличение важности систем обеспечения безопасности.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-preview">
+                    <h3><i class="fas fa-stream"></i> ХРОНОЛОГИЧЕСКИЙ ОБЗОР</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">1950-е: Fortran, LISP, COBOL</div>
+                        <div class="timeline-item">1970-е: C, Pascal, SQL</div>
+                        <div class="timeline-item">1990-е: Python, Java, JavaScript, Ruby</div>
+                        <div class="timeline-item">2000-е: C#, Go, Scala, Rust</div>
+                        <div class="timeline-item">2010-е: Swift, Kotlin, TypeScript</div>
+                        <div class="timeline-item">2020-е: Zig, Mojo, Carbon</div>
+                    </div>
+                </div>
+            </section>
+            <section id="tree" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-project-diagram"></i> ГЕНЕАЛОГИЧЕСКОЕ ДРЕВО ЯЗЫКОВ</h2>
+                    <p class="section-subtitle">Интерактивная визуализация эволюционных связей между языками программирования</p>
+                </div>
+                
+                <div class="tree-legend">
+                    <div class="legend-item">
+                        <div class="legend-line"></div>
+                        <span>Влияние языка на другой</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-circle" style="background-color: #006600;"></div>
+                        <span>Язык 1950-1960-х</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-circle" style="background-color: #00AA00;"></div>
+                        <span>Язык 1970-1980-х</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-circle" style="background-color: #00FF00;"></div>
+                        <span>Язык 1990-х и новее</span>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="control-btn" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+                    <button class="control-btn" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+                    <button class="control-btn" id="reset-view"><i class="fas fa-expand-arrows-alt"></i></button>
+                    <button class="control-btn" id="auto-arrange"><i class="fas fa-network-wired"></i> Авторасположение</button>
+                    <button class="control-btn" id="show-influences"><i class="fas fa-link"></i> Показать связи</button>
+                </div>
+                
+                <div class="tree-container">
+                    <canvas id="tree-canvas" width="1400" height="900"></canvas>
+                </div>
+                
+
+                
+                <div class="language-info">
+                    <h3><i class="fas fa-microscope"></i> ДЕТАЛИ ЯЗЫКА</h3>
+                    <div class="language-details">
+                        <p>Выберите язык на древе для просмотра подробной информации</p>
+                    </div>
+                </div>
+            </section>
+            <section id="statistics" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-bar"></i> СТАТИСТИЧЕСКИЙ АНАЛИЗ 2025</h2>
+                    <p class="section-subtitle">Актуальные данные о популярности и использовании языков программирования</p>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="chart-container">
+                        <canvas id="popularity-chart"></canvas>
+                        <p class="chart-label">Индекс TIOBE: популярность языков программирования (2025 год)</p>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3><i class="fas fa-trophy"></i> ТОП-10 ЯЗЫКОВ 2025</h3>
+                            <ol class="top-list">
+                                <li>Python <span class="stat-value">16.8%</span></li>
+                                <li>C <span class="stat-value">14.2%</span></li>
+                                <li>C++ <span class="stat-value">13.5%</span></li>
+                                <li>Java <span class="stat-value">11.3%</span></li>
+                                <li>C# <span class="stat-value">8.7%</span></li>
+                                <li>JavaScript <span class="stat-value">4.5%</span></li>
+                                <li>Go <span class="stat-value">3.8%</span></li>
+                                <li>TypeScript <span class="stat-value">3.5%</span></li>
+                                <li>PHP <span class="stat-value">2.9%</span></li>
+                                <li>Rust <span class="stat-value">2.7%</span></li>
+                            </ol>
+                        </div>
+                        
+
+                        
+                        <div class="stat-card">
+                            <h3><i class="fas fa-industry"></i> ИСПОЛЬЗОВАНИЕ ПО ОТРАСЛЯМ 2025</h3>
+                            <ul class="industry-list">
+                                <li><strong>Веб-разработка:</strong> TypeScript, Python, JavaScript, Go</li>
+                                <li><strong>AI/ML:</strong> Python, Julia, Mojo, R</li>
+                                <li><strong>Мобильная:</strong> Kotlin, Swift, Dart, JavaScript</li>
+                                <li><strong>Системное ПО:</strong> Rust, C, C++, Zig</li>
+                                <li><strong>Корпоративное:</strong> Java, C#, Go, Python</li>
+                                <li><strong>Игры:</strong> C++, C#, Rust, Lua</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <h3><i class="fas fa-gem"></i> НОВЫЕ ЯЗЫКИ 2020-2025</h3>
+                            <ul class="industry-list">
+                                <li><strong>Mojo</strong> (2022) - для AI, совместим с Python</li>
+                                <li><strong>Zig</strong> (2020) - замена C с безопасностью памяти</li>
+                                <li><strong>Carbon</strong> (2022) - экспериментальный от Google, наследник C++</li>
+                                <li><strong>Bun</strong> (2023) - JavaScript runtime и инструментарий</li>
+                                <li><strong>Gleam</strong> (2021) - типизированный язык для BEAM VM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="data-source">
+                    <p><i class="fas fa-database"></i> Источники данных: TIOBE Index 2025, Stack Overflow Developer Survey 2025, GitHub Octoverse 2025</p>
+                </div>
+            </section>
+            <section id="syntax" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-code"></i> СРАВНЕНИЕ СИНТАКСИСА</h2>
+                    <p class="section-subtitle">Примеры кода на различных языках программирования</p>
+                </div>
+                
+                <div class="syntax-examples">
+                    <div class="example-section">
+                        <h3><i class="fab fa-python"></i> Python</h3>
+                        <div class="code-block">
+                            <h4>Функция вычисления факториала</h4>
+                            <pre>
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+# Вызов функции
+print(factorial(5))  # Вывод: 120</pre>
+                            <p class="code-note">Читаемый синтаксис с отступами вместо скобок</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-section">
+                        <h3><i class="fab fa-java"></i> Java</h3>
+                        <div class="code-block">
+                            <h4>Функция вычисления факториала</h4>
+                            <pre>
+public class Factorial {
+    public static int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(factorial(5));  // Вывод: 120
+    }
+}</pre>
+                            <p class="code-note">Статическая типизация и обязательная структура класса</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-section">
+                        <h3><i class="fab fa-js-square"></i> JavaScript</h3>
+                        <div class="code-block">
+                            <h4>Функция вычисления факториала</h4>
+                            <pre>
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+// Вызов функции
+console.log(factorial(5));  // Вывод: 120
+
+// Стрелочная функция (ES6+)
+const factorialArrow = n => 
+    n === 0 ? 1 : n * factorialArrow(n - 1);</pre>
+                            <p class="code-note">Динамическая типизация и гибкий синтаксис</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-section">
+                        <h3><i class="fas fa-c"></i> C</h3>
+                        <div class="code-block">
+                            <h4>Функция вычисления факториала</h4>
+                            <pre>
+#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    printf("%d\n", factorial(5));  // Вывод: 120
+    return 0;
+}</pre>
+                            <p class="code-note">Низкоуровневый контроль, ручное управление памятью</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-section">
+                        <h3><i class="fab fa-rust"></i> Rust</h3>
+                        <div class="code-block">
+                            <h4>Функция вычисления факториала</h4>
+                            <pre>
+fn factorial(n: u64) -> u64 {
+    match n {
+        0 => 1,
+        _ => n * factorial(n - 1)
+    }
+}
+
+fn main() {
+    println!("{}", factorial(5));  // Вывод: 120
+    
+    // Итеративный вариант
+    let factorial_iter = (1..=5).product::<u64>();
+    println!("{}", factorial_iter);
+}</pre>
+                            <p class="code-note">Система владения, безопасность памяти без сборщика мусора</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-section">
+                        <h3><i class="fas fa-hashtag"></i> C#</h3>
+                        <div class="code-block">
+                            <h4>Функция вычисления факториала</h4>
+                            <pre>
+using System;
+
+class Program {
+    static int Factorial(int n) {
+        return n == 0 ? 1 : n * Factorial(n - 1);
+    }
+    
+    static void Main() {
+        Console.WriteLine(Factorial(5));  // Вывод: 120
+        
+        // Современный синтаксис
+        int FactorialLocal(int n) => 
+            n == 0 ? 1 : n * FactorialLocal(n - 1);
+    }
+}</pre>
+                            <p class="code-note">Современный синтаксис с LINQ и async/await</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="syntax-comparison-table">
+                    <h3><i class="fas fa-table"></i> СРАВНИТЕЛЬНАЯ ТАБЛИЦА СИНТАКСИЧЕСКИХ ОСОБЕННОСТЕЙ</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Язык</th>
+                                <th>Типизация</th>
+                                <th>Управление памятью</th>
+                                <th>Парадигма</th>
+                                <th>Синтаксическая особенность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Python</td>
+                                <td>Динамическая</td>
+                                <td>GC (сборщик мусора)</td>
+                                <td>Мультипарадигменный</td>
+                                <td>Отступы вместо скобок</td>
+                            </tr>
+                            <tr>
+                                <td>Java</td>
+                                <td>Статическая</td>
+                                <td>GC (JVM)</td>
+                                <td>ООП</td>
+                                <td>Обязательные классы, JVM байткод</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript</td>
+                                <td>Динамическая</td>
+                                <td>GC</td>
+                                <td>Мультипарадигменный</td>
+                                <td>Прототипное наследование, асинхронный</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td>Статическая</td>
+                                <td>Ручное</td>
+                                <td>Императивный</td>
+                                <td>Указатели, прямой доступ к памяти</td>
+                            </tr>
+                            <tr>
+                                <td>Rust</td>
+                                <td>Статическая</td>
+                                <td>Владение/заимствование</td>
+                                <td>Системный/Функциональный</td>
+                                <td>Нет null, нет исключений (Result/Option)</td>
+                            </tr>
+                            <tr>
+                                <td>C#</td>
+                                <td>Статическая</td>
+                                <td>GC (.NET)</td>
+                                <td>ООП/Функциональный</td>
+                                <td>LINQ, свойства, события</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="evolution" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-atom"></i> ЭВОЛЮЦИЯ ЯЗЫКОВ ПРОГРАММИРОВАНИЯ</h2>
+                    <p class="section-subtitle">Историческое развитие и ключевые инновации</p>
+                </div>
+                
+                <div class="evolution-timeline">
+                    <div class="era">
+                        <div class="era-header">
+                            <span class="era-year">1950-е</span>
+                            <h3>Эра мейнфреймов</h3>
+                        </div>
+                        <div class="era-content">
+                            <p><strong>FORTRAN</strong> (1957) - первый высокоуровневый язык, ориентированный на научные вычисления.</p>
+                            <p><strong>LISP</strong> (1958) - основа функционального программирования, обработка списков.</p>
+                            <p><strong>COBOL</strong> (1959) - для бизнес-приложений, читаемый английский синтаксис.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="era">
+                        <div class="era-header">
+                            <span class="era-year">1970-е</span>
+                            <h3>Фундаментальные языки</h3>
+                        </div>
+                        <div class="era-content">
+                            <p><strong>C</strong> (1972) - низкоуровневый доступ с высокоуровневыми конструкциями.</p>
+                            <p><strong>SQL</strong> (1974) - декларативный язык для работы с базами данных.</p>
+                            <p><strong>Pascal</strong> (1970) - для обучения структурному программированию.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="era">
+                        <div class="era-header">
+                            <span class="era-year">1990-е</span>
+                            <h3>Эра интернета</h3>
+                        </div>
+                        <div class="era-content">
+                            <p><strong>Python</strong> (1991) - акцент на читаемость и продуктивность.</p>
+                            <p><strong>Java</strong> (1995) - кроссплатформенность, виртуальная машина.</p>
+                            <p><strong>JavaScript</strong> (1995) - интерактивность веб-страниц.</p>
+                            <p><strong>Ruby</strong> (1995) - принцип наименьшего удивления, фреймворк Rails.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="era">
+                        <div class="era-header">
+                            <span class="era-year">2000-е</span>
+                            <h3>Современная эра</h3>
+                        </div>
+                        <div class="era-content">
+                            <p><strong>C#</strong> (2000) - объектно-ориентированный язык Microsoft.</p>
+                            <p><strong>Scala</strong> (2004) - сочетание ООП и функционального программирования.</p>
+                            <p><strong>Go</strong> (2009) - от Google, упрощённый синтаксис, параллелизм.</p>
+                            <p><strong>Rust</strong> (2010) - безопасность памяти без сборщика мусора.</p>
+                            <p><strong>TypeScript</strong> (2012) - типизированное надмножество JavaScript.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="era">
+                        <div class="era-header">
+                            <span class="era-year">2020-е</span>
+                            <h3>Эра специализации</h3>
+                        </div>
+                        <div class="era-content">
+                            <p><strong>Zig</strong> (2020) - современная замена C с безопасностью памяти.</p>
+                            <p><strong>Mojo</strong> (2022) - язык для AI, совместимый с Python.</p>
+                            <p><strong>Carbon</strong> (2022) - экспериментальный язык от Google, наследник C++.</p>
+                            <p><strong>Bun</strong> (2023) - быстрый JavaScript runtime и инструментарий.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="facts" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-lightbulb"></i> ИНТЕРЕСНЫЕ ФАКТЫ И НАБЛЮДЕНИЯ</h2>
+                    <p class="section-subtitle">Малоизвестные детали о языках программирования</p>
+                </div>
+                
+                <div class="facts-grid">
+                    <div class="fact-card">
+                        <div class="fact-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Первый баг</h3>
+                        <p>Термин "баг" (ошибка) появился в 1947 году, когда мотылёк застрял в реле компьютера Harvard Mark II. Техники приклеили его в журнал с пометкой "первый обнаруженный баг".</p>
+                    </div>
+                    
+                    <div class="fact-card">
+                        <div class="fact-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <h3>Происхождение Java</h3>
+                        <p>Изначально язык назывался Oak (Дуб), но из-за существующей торговой марки был переименован в Java. Название выбрано случайно во время перерыва на кофе.</p>
+                    </div>
+                    
+                    <div class="fact-card">
+                        <div class="fact-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Название Python</h3>
+                        <p>Язык назван не в честь змеи, а в честь британского комедийного шоу "Monty Python's Flying Circus", которое любил создатель Гвидо ван Россум.</p>
+                    </div>
+                    
+                    <div class="fact-card">
+                        <div class="fact-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h3>JavaScript за 10 дней</h3>
+                        <p>JavaScript был создан Бренданом Айком всего за 10 дней в мае 1995 года для браузера Netscape Navigator. Первоначально назывался Mocha, затем LiveScript.</p>
+                    </div>
+                    
+                    <div class="fact-card">
+                        <div class="fact-icon">
+                            <i class="fas fa-space-shuttle"></i>
+                        </div>
+                        <h3>Код Аполлона</h3>
+                        <p>Программное обеспечение для миссии Аполлон было написано на языке ассемблера. Код содержал комментарии в стиле хайку для лучшей читаемости.</p>
+                    </div>
+                    
+                    <div class="fact-card">
+                        <div class="fact-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Язык для любви</h3>
+                        <p>Язык программирования "Whitespace" использует только пробелы, табуляции и переводы строк. Остальные символы игнорируются. Создан в 2003 году как шутка.</p>
+                    </div>
+                    
+                    <div class="fact-card">
+                        <div class="fact-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Первый программист</h3>
+                        <p>Ада Лавлейс (1815-1852) считается первым программистом в истории. Она написала первую программу для аналитической машины Чарльза Бэббиджа.</p>
+                    </div>
+                    
+                    <div class="fact-card">
+                        <div class="fact-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Swift и его логотип</h3>
+                        <p>Язык Swift от Apple назван в честь птицы стриж (swift). Логотип языка - стилизованная птица, символизирующая скорость и элегантность.</p>
+                    </div>
+                </div>
+                
+                <div class="quote-container">
+                    <blockquote class="quote">
+                        "Языки программирования как языки народов. С одной стороны выучишь Английский-легко дастся и немецкий, так и с Java и Kotlin, PHP и JS, а вроде выучишь английский и японский кажется набором закорючек психбольного... Так и с Ruby и... Я потерял мысль, пойду спать."
+                        <footer>— Это я, да.</footer>
+                    </blockquote>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© 2025 Все данные собраны для исследовательских целей, для сайта по истории. Ы, как я устал...</p>
+                <p class="footer-note">Не бейте меня пожалуйста...</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
