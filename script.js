@@ -96,6 +96,34 @@ const programmingLanguages = [
       info: "Экспериментальный язык от Google, позиционируется как наследник C++ с современным синтаксисом." }
 ];
 
+const additionalLanguages = [
+    { id: 33, name: "APL", year: 1962, x: 900, y: 150, influences: [], color: "#008800", 
+      info: "Математический язык с уникальной символикой. Влиял на J, MATLAB." },
+    
+    { id: 34, name: "Prolog", year: 1972, x: 1150, y: 300, influences: [], color: "#00AA00", 
+      info: "Язык логического программирования. Основа для экспертных систем." },
+    
+    { id: 35, name: "Ada", year: 1980, x: 850, y: 400, influences: [9], color: "#00CC00", 
+      info: "Язык для встроенных систем с акцентом на надёжность. Разработан для Минобороны США." },
+    
+    { id: 36, name: "Erlang", year: 1986, x: 1100, y: 400, influences: [2, 34], color: "#00CC00", 
+      info: "Функциональный язык для распределённых систем с отказоустойчивостью." },
+    
+    { id: 37, name: "Delphi", year: 1995, x: 1250, y: 550, influences: [9], color: "#00FF00", 
+      info: "Объектно-ориентированный Pascal с визуальной средой разработки." },
+    
+    { id: 38, name: "Julia", year: 2012, x: 950, y: 750, influences: [1, 16, 18], color: "#00FF00", 
+      info: "Высокопроизводительный язык для научных вычислений." },
+    
+    { id: 39, name: "Dart", year: 2011, x: 1350, y: 700, influences: [20, 23], color: "#00FF00", 
+      info: "Язык от Google для веб и мобильной разработки." },
+    
+    { id: 40, name: "Elixir", year: 2011, x: 1250, y: 750, influences: [36, 21], color: "#00FF00", 
+      info: "Функциональный язык на виртуальной машине Erlang с синтаксисом Ruby." }
+];
+
+const allProgrammingLanguages = [...programmingLanguages, ...additionalLanguages];
+
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         document.getElementById('loading-screen').classList.add('hidden');
@@ -108,6 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
         initTreeVisualization();
         initCharts();
         setupEventListeners();
+        addGenealogyAnalysis();
+        setupMethodologySection();
     }
     
     function initNavigation() {
@@ -161,9 +191,9 @@ document.addEventListener('DOMContentLoaded', function() {
             drawTimePeriods();
 
             if (showInfluences) {
-                programmingLanguages.forEach(language => {
+                allProgrammingLanguages.forEach(language => {
                     language.influences.forEach(influenceId => {
-                        const sourceLang = programmingLanguages.find(l => l.id === influenceId);
+                        const sourceLang = allProgrammingLanguages.find(l => l.id === influenceId);
                         if (sourceLang) {
                             drawConnection(sourceLang, language, false);
                         }
@@ -177,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             
-            programmingLanguages.forEach(language => {
+            allProgrammingLanguages.forEach(language => {
                 drawLanguageNode(language);
             });
             drawPeriodLabels();
@@ -336,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             let clickedLang = null;
             
-            programmingLanguages.forEach(language => {
+            allProgrammingLanguages.forEach(language => {
                 const langX = language.x * zoom + offsetX;
                 const langY = language.y * zoom + offsetY;
                 const radius = 18 * zoom;
@@ -357,7 +387,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 showLanguageDetails(clickedLang);
-
                 drawTree();
             }
         });
@@ -367,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (!selectedLanguage) return;
 
-            programmingLanguages.forEach(language => {
+            allProgrammingLanguages.forEach(language => {
                 if (language.influences.includes(selectedLanguage.id)) {
                     highlightedConnections.push({
                         source: selectedLanguage,
@@ -378,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             selectedLanguage.influences.forEach(influenceId => {
-                const sourceLang = programmingLanguages.find(l => l.id === influenceId);
+                const sourceLang = allProgrammingLanguages.find(l => l.id === influenceId);
                 if (sourceLang) {
                     highlightedConnections.push({
                         source: sourceLang,
@@ -388,11 +417,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            const influencedLanguages = programmingLanguages.filter(lang => 
+            const influencedLanguages = allProgrammingLanguages.filter(lang => 
                 lang.influences.includes(selectedLanguage.id)
             );
 
-            const influencingLanguages = programmingLanguages.filter(lang => 
+            const influencingLanguages = allProgrammingLanguages.filter(lang => 
                 selectedLanguage.influences.includes(lang.id)
             );
 
@@ -401,19 +430,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function updateConnectionInfo(influencing, influenced) {
             const connectionsInfo = document.getElementById('connections-info');
-            if (!connectionsInfo) {
-                const languageDetails = document.querySelector('.language-details');
-                const div = document.createElement('div');
-                div.id = 'connections-info';
-                div.style.marginTop = '15px';
-                div.style.padding = '10px';
-                div.style.backgroundColor = '#002200';
-                div.style.border = '1px solid #004400';
-                div.style.borderRadius = '5px';
-                languageDetails.appendChild(div);
-            }
-            
-            const connectionsInfoDiv = document.getElementById('connections-info');
             
             let html = `<div style="color: #00FF00; font-weight: bold; margin-bottom: 8px;">СВЯЗИ ВЛИЯНИЯ:</div>`;
             
@@ -429,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 html += `</div>`;
             }
             
-            connectionsInfoDiv.innerHTML = html;
+            connectionsInfo.innerHTML = html;
         }
 
         function showLanguageDetails(language) {
@@ -449,13 +465,13 @@ document.addEventListener('DOMContentLoaded', function() {
         function getInfluenceNames(language) {
             if (language.influences.length === 0) return 'оригинальный язык (без прямых предшественников)';
             return language.influences.map(id => {
-                const lang = programmingLanguages.find(l => l.id === id);
+                const lang = allProgrammingLanguages.find(l => l.id === id);
                 return lang ? `<span style="color: #00FF00">${lang.name}</span>` : 'неизвестно';
             }).join(', ');
         }
 
         function getLanguagesInfluencedBy(language) {
-            const influenced = programmingLanguages.filter(lang => 
+            const influenced = allProgrammingLanguages.filter(lang => 
                 lang.influences.includes(language.id)
             );
             
@@ -530,15 +546,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const connectionsInfo = document.getElementById('connections-info');
             if (connectionsInfo) {
-                connectionsInfo.remove();
+                connectionsInfo.innerHTML = '';
             }
 
             document.querySelector('.language-details').innerHTML = 
-                '<p>Выберите язык на древе для просмотра подробной информации</p>';
+                '<p>Выберите язык на древе для просмотра подробной информации о его происхождении и влиянии</p>';
         });
         
         document.getElementById('auto-arrange').addEventListener('click', function() {
-            programmingLanguages.forEach(lang => {
+            allProgrammingLanguages.forEach(lang => {
                 const year = lang.year;
                 let yPos = 0;
                 
@@ -552,7 +568,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 let xPos = 200;
                 if (lang.influences.length > 0) {
-                    const firstInfluence = programmingLanguages.find(l => l.id === lang.influences[0]);
+                    const firstInfluence = allProgrammingLanguages.find(l => l.id === lang.influences[0]);
                     if (firstInfluence) {
                         xPos = firstInfluence.x + 150;
                     }
@@ -570,12 +586,12 @@ document.addEventListener('DOMContentLoaded', function() {
             drawTree();
             
             document.querySelector('.language-details').innerHTML = 
-                '<p>Выберите язык на древе для просмотра подробной информации</p>';
+                '<p>Выберите язык на древе для просмотра подробной информации о его происхождении и влиянии</p>';
         });
         
         function normalizePositions() {
             const groups = {};
-            programmingLanguages.forEach(lang => {
+            allProgrammingLanguages.forEach(lang => {
                 if (!groups[lang.y]) groups[lang.y] = [];
                 groups[lang.y].push(lang);
             });
@@ -602,24 +618,19 @@ document.addEventListener('DOMContentLoaded', function() {
             drawTree();
         });
 
-        const resetSelectionBtn = document.createElement('button');
-        resetSelectionBtn.className = 'control-btn';
-        resetSelectionBtn.innerHTML = '<i class="fas fa-times-circle"></i> Сбросить выделение';
-        resetSelectionBtn.addEventListener('click', function() {
+        document.getElementById('reset-selection').addEventListener('click', function() {
             selectedLanguage = null;
             highlightedConnections = [];
             drawTree();
 
             const connectionsInfo = document.getElementById('connections-info');
             if (connectionsInfo) {
-                connectionsInfo.remove();
+                connectionsInfo.innerHTML = '';
             }
 
             document.querySelector('.language-details').innerHTML = 
-                '<p>Выберите язык на древе для просмотра подробной информации</p>';
+                '<p>Выберите язык на древе для просмотра подробной информации о его происхождении и влиянии</p>';
         });
-
-        document.querySelector('.controls').appendChild(resetSelectionBtn);
 
         canvas.addEventListener('mousedown', function(e) {
             isDragging = true;
@@ -650,8 +661,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         drawTree();
+        showLanguageDetails(allProgrammingLanguages[0]);
+    }
+    
+    function addGenealogyAnalysis() {
+        const influenceMap = analyzeLanguageInfluence();
+        
+        updateGenealogyAnalysis(influenceMap);
+    }
 
-        showLanguageDetails(programmingLanguages[0]);
+    function analyzeLanguageInfluence() {
+        const influenceCount = {};
+        const heritageComplexity = {};
+        
+        allProgrammingLanguages.forEach(lang => {
+            heritageComplexity[lang.name] = lang.influences.length;
+            influenceCount[lang.name] = 0;
+        });
+        
+        allProgrammingLanguages.forEach(lang => {
+            lang.influences.forEach(influenceId => {
+                const sourceLang = allProgrammingLanguages.find(l => l.id === influenceId);
+                if (sourceLang) {
+                    influenceCount[sourceLang.name] = (influenceCount[sourceLang.name] || 0) + 1;
+                }
+            });
+        });
+        
+        return { influenceCount, heritageComplexity };
+    }
+
+    function updateGenealogyAnalysis(influenceMap) {
+        const { influenceCount, heritageComplexity } = influenceMap;
+
+        const mostInfluential = Object.entries(influenceCount)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 5);
+        
+        const influentialList = document.getElementById('most-influential-list');
+        influentialList.innerHTML = mostInfluential
+            .map(([name, count]) => `<li>${name} <span class="stat-value">${count} языков</span></li>`)
+            .join('');
+
+        const complexHeritage = Object.entries(heritageComplexity)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 5);
+        
+        const heritageList = document.getElementById('complex-heritage-list');
+        heritageList.innerHTML = complexHeritage
+            .map(([name, count]) => `<li>${name} <span class="stat-value">${count} предков</span></li>`)
+            .join('');
+
+        const statsList = document.getElementById('tree-stats');
+        statsList.innerHTML = `
+            <li>Всего языков: <strong>${allProgrammingLanguages.length}</strong></li>
+            <li>Покрытие: <strong>1957-2025 гг.</strong></li>
+            <li>Основных ветвей: <strong>4</strong></li>
+            <li>Связей влияния: <strong>${allProgrammingLanguages.reduce((sum, lang) => sum + lang.influences.length, 0)}</strong></li>
+        `;
     }
     
     function initCharts() {
@@ -660,6 +727,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const languages = ['Python', 'C', 'C++', 'Java', 'C#', 'JavaScript', 'Go', 'TypeScript', 'PHP', 'Rust'];
         const popularity2025 = [16.8, 14.2, 13.5, 11.3, 8.7, 4.5, 3.8, 3.5, 2.9, 2.7];
         const popularity2023 = [15.5, 13.5, 12.3, 10.5, 7.5, 3.0, 1.5, 2.4, 2.6, 1.8];
+        
         new Chart(ctx, {
             type: 'bar',
             data: {
@@ -750,7 +818,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, observerOptions);
 
-        document.querySelectorAll('.info-card, .fact-card, .stat-card, .example-section').forEach(card => {
+        document.querySelectorAll('.info-card, .fact-card, .stat-card, .example-section, .methodology-card, .analysis-card, .branch').forEach(card => {
             observer.observe(card);
         });
 
